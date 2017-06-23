@@ -1,0 +1,11 @@
+{% extends 'header.html' %}
+
+{% block content %}
+	<div class="page-header">
+		<h1>Registering a Doctor</h1>
+	</div>
+	<form method="POST" action="{% url 'register_doctor' %}" class="post-form">{% csrf_token %}>
+		{{ form.as_p }}
+		<button type='submit'>Save</button>
+	</form>
+{% endblock %}
