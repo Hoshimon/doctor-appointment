@@ -1,0 +1,4 @@
+Select a Specialty and a Doctor from a list in AppointmentCreate.
+	Cant Select a Doctor "Too many values"
+
+Everything else done.
