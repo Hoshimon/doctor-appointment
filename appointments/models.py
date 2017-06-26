@@ -16,6 +16,7 @@ class Specialty(models.Model):
 	specialty_name = models.CharField(max_length=200)
 
 class Appointment(models.Model):
+	user = models.ForeignKey(User, null=True, blank=True)
 	doctor = models.CharField(max_length=200)
 	description = models.TextField(max_length=10000)
 	date = models.DateField()
