@@ -31,6 +31,13 @@
 				  <h3>Hospital Generico Nº34</h3>
 				  </center>
 			  </div>
+				<div>
+				{% if not user.is_authenticated %}
+				<span style="float:right"><a href='/appointments/login/'>- Log in </a></span>
+      	<span style="float:right"><a href='/appointments/create_user/'> Create User - </a></span>
+				{% else %}
+				<span style="float:right"><a href='/appointments/logout/'>Log out</a></span>
+				{% endif %}
 		</div><hr>
 
 		<div class="row">
@@ -44,7 +51,7 @@
 			  <ul class="nav nav-pills nav-stacked">
 				<li><a href='/'>Home Page</a></li>
 				<li><a href='/appointments/create_appointment/'>Register Appointments</a></li>
-				<li><a href='/appointments/see_appointment/'>See Appointemnts</a></li>
+				<li><a href='/appointments/see_appointments/'>See Appointemnts</a></li>
 				<li><a href='/appointments/register_doctor/'>Register Doctors</a></li>
 				<li><a href='/appointments/register_specialty/'>Register Specialties</a></li>
 			  </ul>

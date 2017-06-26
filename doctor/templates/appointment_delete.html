@@ -1,0 +1,16 @@
+{% extends 'header.html' %}
+{% load bootstrap %}
+
+{% if not user.is_authenticated %}
+Login is required
+{% endif %}
+
+{% block content %}
+	<div class="page-header">
+		<h1>Deleting an appointment</h1>
+	</div>
+  <form action="" method="post">{% csrf_token %}
+    <h4>Are you sure you want to delete this appointment?</h2>
+    <h3><input type="submit" value="Yes, Delete this."/></h3>
+    <h3><a href="{% url 'appointment_list' %}">No, Take me back.</a></h3>
+{% endblock %}

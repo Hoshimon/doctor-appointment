@@ -1,11 +1,16 @@
 {% extends 'header.html' %}
+{% load bootstrap %}
 
 {% block content %}
+{% if not user.is_authenticated %}
+Login is required
+{% else %}
 	<div class="page-header">
 		<h1>Registering a Doctor's Appointment</h1>
 	</div>
 	<form method="POST" action="{% url 'create_appointment' %}" class="post-form">{% csrf_token %}>
-		{{ form.as_p }}
+		{{ form|bootstrap_horizontal }}
 		<button type='submit'>Save</button>
 	</form>
+{% endif %}
 {% endblock %}
